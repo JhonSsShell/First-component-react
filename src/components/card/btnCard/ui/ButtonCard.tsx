@@ -7,7 +7,7 @@ import { ButtonProps } from '../interface/ButtonProps';
 const ButtonCard = ({ text, evento, icon }: ButtonProps) => {
     return(
         <div className='w-full flex justify-center items-center'>
-            <button onClick={evento} className="p-4 w-36 bg-blue-100 rounded-xl font-bold text-blue-950 flex items-center justify-evenly gap-2 hover:bg-blue-200">
+            <button onClick={evento} className="p-4 w-44 bg-blue-100 rounded-xl font-bold text-blue-950 flex items-center justify-evenly gap-2 hover:bg-blue-200">
                 <span className='text-xs'>
                     {icon && <FontAwesomeIcon icon={icon} />}
                 </span>

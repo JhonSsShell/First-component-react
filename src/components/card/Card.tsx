@@ -1,3 +1,5 @@
+// Utilizar useState para la interactividad con react
+import { useState } from "react";
 // Importar el encabezado de la card
 import CardHeader from "./cardHeader/ui/CardHeader";
 // Importar el boton de la card
@@ -10,17 +12,20 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 // Crea la card con todos los componentes que s realizaron
 const Card = () => {
 
-    // Contador para agregar interactividad
-    let numero = 0;
+    // Contador para agregar interactividad a un parrafo con el contador
+    const [contador, setContador] = useState<number>(0)
 
-    // Funcion para un evento para el boton
+    // Funcion para el evento del boton
     const handleButton = () => {
-        numero++;
-        console.log(`Cantidad ${numero}`);
+        setContador(contador + 1);
     }
 
+    // La funcion Card retorna el componente
     return ( 
         <div className="max-w-96 w-full rounded-xl bg-gray-100 p-4 flex flex-col text-center gap-2 ">
+            <p>
+                haz hecho clic {contador} veces
+            </p>
             <CardHeader title="Nuevo titulo de la card" subTitle="Este es otro subtitulo" />
             <CardBody description="Esta es una nueva descripcion de la card que se hizo como componente" />
             <ButtonCard evento={handleButton} text="Has click aqui" icon={faCoffee} />
@@ -28,4 +33,5 @@ const Card = () => {
     )
 }
 
+// Exporta por defecto el componente como modulo
 export default Card;

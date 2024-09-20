@@ -13,7 +13,7 @@ RUN npm install
 # Copia el resto del código del proyecto React al contenedor
 COPY . .
 
-# Expone el puerto 3000 (o el que uses)
+# Expone 5173 que escucha vite
 EXPOSE 5173
 
 # Comando por defecto para ejecutar la aplicación
